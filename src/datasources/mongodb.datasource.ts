@@ -2,10 +2,12 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 import { dataBase } from '../config/claveDB';
 
+const dotenv = require('dotenv').config();
+
 const config = {
   name: 'mongodb',
   connector: 'mongodb',
-  url: dataBase.urlDataBase,
+  url: process.env.urlDataBase,
   host: '',
   port: 0,
   user: '',
